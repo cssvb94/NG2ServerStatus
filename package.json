@@ -1,7 +1,7 @@
 {
-    "name": "ng-2-ts",
+    "name": "ng2serverstatus",
     "version": "0.1.0",
-    "description": "My Angular2-TypeScript App",
+    "description": "NG2 Server Status Angular2-TypeScript App",
     "keywords": [
         "angular2",
         "typescript",
