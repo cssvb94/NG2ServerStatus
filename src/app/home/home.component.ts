@@ -26,13 +26,8 @@ export class HomeComponent implements OnInit {
         if (this.servers && this.ping && this.srvnames) {
             let totalServers = this.ping.Dead.length + this.ping.Alive.length;
             let totalServersPingable = this.ping.Alive.length;
-
-            // console.log("Total servers: " + totalServers);
-            // console.log("Total pingable: " + totalServersPingable);
-
             let diff: string[] = (this.difference(this.ping.Alive, this.srvnames));
             this.noinfonum = diff.length;
-            // console.log(diff);
             return diff.join(", ");
         }
     }
@@ -45,9 +40,7 @@ export class HomeComponent implements OnInit {
         this.data.getPingData().subscribe(
             data => this.ping = data,
             err => console.log(err),
-            () => {
-                //console.log(this.ping);
-            }
+            () => { }
         );
 
         this.data.getData().subscribe(
@@ -58,7 +51,6 @@ export class HomeComponent implements OnInit {
                     return f.OS != null;
                 });
                 // Completed
-                // console.log(this.servers); // DEBUG **********************************
 
                 let warnings24h: number = 0;
                 let errors24h: number = 0;
@@ -66,9 +58,6 @@ export class HomeComponent implements OnInit {
 
                 let now: moment.Moment = moment(); // NOW
                 let time24Hago: moment.Moment = now.hours(now.hours() - 24);
-
-                // time24Hago.setHours(now.hours() - 24);
-                // console.log(now.toLocaleString() + " / " + time24Hago.toLocaleString());
 
                 this.servers.forEach(function (srv) {
                     // Turn it to array
@@ -129,7 +118,6 @@ export class HomeComponent implements OnInit {
                     srv.Reboots24h = reboots24h;
                 });
                 this.srvnames = names;
-                console.log(this.noInfo());
             });
     }
 

@@ -1,13 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-
-// import 'bootstrap/dist/css/bootstrap.css';
-// import "font-awesome/less/font-awesome.less"
+import { Component, OnInit } from '@angular/core';
 import "font-awesome/css/font-awesome.css"
 import '../css/main.css';
-
-// import '../css/bootstrap/less/bootstrap.less';
-// import '../css/theme/bootswatch.less';
-// import '../css/theme/variables.less';
 
 @Component({
     selector: 'app',
@@ -16,6 +9,6 @@ import '../css/main.css';
 
 export class AppComponent implements OnInit {
     ngOnInit() {
-        console.log('AppComponent initializing...');
+        console.log('Initializing...');
     }
 }
